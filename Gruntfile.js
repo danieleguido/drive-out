@@ -333,7 +333,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>/contents',
         dest: '<%= yeoman.dist %>/contents',
-        src: '{,*/}*.json'
+        src: '**/*.json'
       },
       media: {
         expand: true,
