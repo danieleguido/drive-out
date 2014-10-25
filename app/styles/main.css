@@ -131,7 +131,7 @@ h2{
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 100%;
+    max-width: 960px;
   }
 }
 .container-narrow > hr {
