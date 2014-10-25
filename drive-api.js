@@ -228,10 +228,12 @@ drive.iterators.flatten = function(file, options, results) {
 
     result.title = $('.title').html() || file.title;
     result.subtitle = $('.subtitle').html();
-    
+    result.authors = $('h3').first().html();
+
     // clean first title and first subtitle
     $('.title').first().text('');
-    $('.subtitle').first().text('')
+    $('.subtitle').first().text('');
+    $('h3').first().html();
 
     result.html = drive.utils.clean($.html());
     result.type = 'document';
