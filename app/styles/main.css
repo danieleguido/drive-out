@@ -35,7 +35,7 @@ body {
 }
 .header ul {
   padding: 0;
-  margin-left: 46px;
+  margin-left: 75px;
 }
 ul.nav{
   
@@ -131,6 +131,13 @@ h2{
   line-height: 25px;
   padding-bottom: 0;
   margin-bottom: 10px;
+}
+
+h3{
+  font-size: 15px;
+  line-height: 25px;
+  color: #7c7c7a;
+  margin-bottom: 20px;
 }
 /* Customize container */
 @media (min-width: 768px) {
