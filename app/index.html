@@ -13,12 +13,29 @@
     <link rel="stylesheet" href="bower_components/perfect-scrollbar/min/perfect-scrollbar.min.css">
     
     <!-- endbuild -->
-    <link href='http://fonts.googleapis.com/css?family=Lato|Crimson+Text:700,400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!-- link href='http://fonts.googleapis.com/css?family=Lato|Crimson+Text:700,400,400italic' rel='stylesheet' type='text/css'-->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body ng-app="driveoutApp" >
+    <style>
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+    #logo {
+      background: url('images/dg.png');
+      width: 36px;
+      height: 36px;
+      border-radius: 36px;
+      -moz-border-radius: 36px;
+      position: absolute;
+      top: 50%;
+      margin-top: -18px;
+      margin-right:10px;
+    }
+    </style>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -28,14 +45,15 @@
       <div ng-controller="LayoutCtrl">
         <div class="header">
           <div class="container">
+            <div id="logo"></div>
             <ul>
-              <li class="logo">logo</li>
+              
               <li ng-class="page.slug?'':'active'"><a href="#/">index</a></li>
-              <li ng-class="page.slug==route.slug?'active':''" ng-repeat="route in routes" ng-if="route.type=='folder'"><a ng-href="#/{{route.slug}}">{{route.title}}</a></li>
+              <li ng-cloak ng-class="page.slug==route.slug?'active':''" ng-repeat="route in routes" ng-if="route.type=='folder'"><a ng-href="#/{{route.slug}}">{{route.title}}</a></li>
             </ul>
             <!-- subfolders -->
             <ul class="nav">
-              <li ng-repeat="folder in folders"><a ng-href="#/{{page.slug}}/{{folder.slug}}">{{folder.title}}</a></li>
+              <li ng-cloak ng-repeat="folder in folders" ng-class="folder.selected? 'active':''"><a ng-href="#/{{page.slug}}/{{folder.slug}}">{{folder.title}}</a></li>
             </ul>
           </div>
         </div>

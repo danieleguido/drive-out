@@ -21,9 +21,10 @@
 
     </div>
     <div ng-switch-when="image" class="media">
-      <img ng-src="media/{{item.src}}" style="width: 100%">
+      <img ng-src="media/{{item.src}}" style="width: 50%; float: left">
       <p class="title" ng-bind-html="item.metadata.title"></p>
       <p class="description" ng-bind-html="item.metadata.subtitle"></p>
+      <div class="clear: both"></div>
     </div>
 
   </article>
